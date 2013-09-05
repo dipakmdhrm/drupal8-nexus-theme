@@ -64,7 +64,7 @@
  * @see template_process()
  */
 ?>
-<div id="page" class="clearfix">
+<div id="page">
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div id="logo" class="site-branding col-sm-6">
@@ -136,26 +136,24 @@
   <?php endif; ?>
   <?php endif; ?>
 
-  <div class="head-ribbon">
-    <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>
-      <?php $preface_col = ( 12 / ( (bool) $page['preface_first'] + (bool) $page['preface_middle'] + (bool) $page['preface_last'] ) ); ?>
-      <div id="preface-area">
-        <div class="container">
-          <div class="row">
-            <?php if($page['preface_first']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
-              <?php print render ($page['preface_first']); ?>
-            </div><?php endif; ?>
-            <?php if($page['preface_middle']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
-              <?php print render ($page['preface_middle']); ?>
-            </div><?php endif; ?>
-            <?php if($page['preface_last']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
-              <?php print render ($page['preface_last']); ?>
-            </div><?php endif; ?>
-          </div>
+  <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>
+    <?php $preface_col = ( 12 / ( (bool) $page['preface_first'] + (bool) $page['preface_middle'] + (bool) $page['preface_last'] ) ); ?>
+    <div id="preface-area">
+      <div class="container">
+        <div class="row">
+          <?php if($page['preface_first']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_first']); ?>
+          </div><?php endif; ?>
+          <?php if($page['preface_middle']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_middle']); ?>
+          </div><?php endif; ?>
+          <?php if($page['preface_last']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_last']); ?>
+          </div><?php endif; ?>
         </div>
       </div>
-    <?php endif; ?>
-  </div>
+    </div>
+  <?php endif; ?>
 
   <?php if($page['header']) : ?>
     <div id="header-block">
@@ -169,30 +167,32 @@
     </div>
   <?php endif; ?>
 
-  <div class="container"> 
-    <div class="row">
-      <?php if($page['sidebar_first']) { $primary_col = 8; } else { $primary_col = 12; } ?>
-      <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
-        <section id="content" role="main" class="clearfix">
-          <?php if (theme_get_setting('breadcrumbs')): ?><?php if ($breadcrumb): ?><div id="breadcrumbs"><?php print $breadcrumb; ?></div><?php endif;?><?php endif; ?>
-          <?php print $messages; ?>
-          <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
-          <div id="content-wrap">
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
-            <?php print render($title_suffix); ?>
-            <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-            <?php print render($page['content']); ?>
-          </div>
-        </section>
+    <div id="main-content">
+    <div class="container"> 
+      <div class="row">
+        <?php if($page['sidebar_first']) { $primary_col = 8; } else { $primary_col = 12; } ?>
+        <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
+          <section id="content" role="main" class="clearfix">
+            <?php if (theme_get_setting('breadcrumbs')): ?><?php if ($breadcrumb): ?><div id="breadcrumbs"><?php print $breadcrumb; ?></div><?php endif;?><?php endif; ?>
+            <?php print $messages; ?>
+            <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
+            <div id="content-wrap">
+              <?php print render($title_prefix); ?>
+              <?php if ($title): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
+              <?php print render($title_suffix); ?>
+              <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
+              <?php print render($page['help']); ?>
+              <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+              <?php print render($page['content']); ?>
+            </div>
+          </section>
+        </div>
+        <?php if ($page['sidebar_first']): ?>
+          <aside id="sidebar" class="col-sm-4" role="complementary">
+           <?php print render($page['sidebar_first']); ?>
+          </aside> 
+        <?php endif; ?>
       </div>
-      <?php if ($page['sidebar_first']): ?>
-        <aside id="sidebar" class="col-sm-4" role="complementary">
-         <?php print render($page['sidebar_first']); ?>
-        </aside> 
-      <?php endif; ?>
     </div>
   </div>
 
@@ -233,7 +233,7 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container">
       <div class="row">
-        <div class="fcred col-12">
+        <div class="fcred col-sm-12">
           <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('Theme by'); ?>  <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
         </div>
       </div>
