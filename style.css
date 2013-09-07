@@ -1068,18 +1068,6 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 
 .comment .comment-text .comment-arrow { border-left: 1px solid #ffffff; border-right: 1px solid #ffffff; }
 
-/*-------------------------------------------*
-/* Navigation
-/*-------------------------------------------*/
-.item-list .pager {
-}
-
-.item-list .pager li {
-  background: #cfcfcf;
-  border-radius: 3px;
-  margin-right: 4px;
-  text-shadow: 1px 1px #fff;
-}
 
 /*-------------------------------------------*
 /* Forum
