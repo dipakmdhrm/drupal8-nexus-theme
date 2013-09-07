@@ -486,7 +486,7 @@ a.frmore{
   background: none repeat scroll 0 0 #ED564B;
   border-bottom: 5px solid #F96B61;
   border-top: 5px solid #F96B61;
-  padding: 40px 0 15px;
+  padding: 40px 0 20px;
 }
 
 .preface-block{
@@ -584,8 +584,7 @@ a.frmore{
 #sidebar .block > h2 {
   font-size: 20px;
   color:#000;
-  height: 60px;
-  line-height: 60px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
 }
