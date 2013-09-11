@@ -2,6 +2,7 @@
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <head>
 <?php print $head; ?>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
 <?php print $scripts; ?>
