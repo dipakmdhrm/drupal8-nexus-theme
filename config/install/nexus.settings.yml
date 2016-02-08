@@ -4,11 +4,11 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: true
-  path: ''
+  use_default: false
+  path: 'themes/nexus/logo.png'
 favicon:
-  use_default: true
-  path: ''
+  use_default: false
+  path: 'themes/nexus/favicon.ico'
 slideshow_display: 1
 breadcrumbs: 1
 slide1_head: 'Sample product'
