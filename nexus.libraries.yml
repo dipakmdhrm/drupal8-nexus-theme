@@ -1,0 +1,15 @@
+global-css:
+  css:
+    theme:
+      assets/css/style.css: {}
+      assets/css/bootstrap.min.css: {}
+      assets/css/flexslider.css: {}
+
+global-js:
+  js:
+    assets/js/bootstrap.min.js : {}
+    assets/js/superfish.js : {}
+    assets/js/mobilemenu.js : {}
+    assets/js/custom.js : {}
+
+
