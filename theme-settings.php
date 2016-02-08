@@ -1,14 +1,15 @@
 <?php
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implementation of hook_form_system_theme_settings_alter()
  *
  * @param $form
- *   The form.
+ *   Nested array of form elements that comprise the form.
+ *
  * @param $form_state
- *   The form state.
+ *   A keyed array containing the current state of the form.
  */
-function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
 
+function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['nexus_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Nexus Settings'),
