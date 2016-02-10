@@ -11,5 +11,11 @@ global-js:
     assets/js/superfish.js : {}
     assets/js/mobilemenu.js : {}
     assets/js/custom.js : {}
+  dependencies:
+    - core/jquery
 
 
+slider-js:
+  js:
+    assets/js/jquery.flexslider.js : {}
+    assets/js/slide.js : {}
