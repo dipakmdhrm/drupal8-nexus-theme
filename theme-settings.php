@@ -16,10 +16,10 @@ function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#collapsible' => FALSE,
     '#collapsed' => FALSE,
   );
-  $form['nexus_settings']['breadcrumbs'] = array(
+  $form['nexus_settings']['show_breadcrumbs'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show breadcrumbs in a page'),
-    '#default_value' => theme_get_setting('breadcrumbs','nexus'),
+    '#default_value' => theme_get_setting('show_breadcrumbs','nexus'),
     '#description'   => t("Check this option to show breadcrumbs in page. Uncheck to hide."),
   );
   $form['nexus_settings']['slideshow'] = array(

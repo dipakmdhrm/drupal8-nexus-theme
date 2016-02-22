@@ -10,7 +10,7 @@ favicon:
   use_default: true
   path: ''
 slideshow_display: 1
-breadcrumbs: 1
+show_breadcrumbs: 1
 slide1_head: 'Sample product'
 slide2_head: 'Sample service'
 slide3_head: 'Contact us'
