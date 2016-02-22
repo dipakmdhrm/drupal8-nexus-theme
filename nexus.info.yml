@@ -3,18 +3,18 @@ type: theme
 description: 'Nexus Theme is a premium Drupal 7 theme. Developed by <a href="http://www.devsaran.com">Devsaran.com</a>.'
 core: 8.x
 
-base theme: classy
-
 # Regions
 regions:
-  sidebar_first: 'First Sidebar'
-  header: 'Header'
+  site_branding: 'Site Branding'
+  main_navigation: 'Main Navigation'
   preface_first: 'Preface First'
   preface_middle: 'Preface Middle'
   preface_last: 'Preface Last'
+  header: 'Header'
+  sidebar_first: 'First Sidebar'
   content_top: 'Content Top'
-  content: 'Content'
   help: 'Help'
+  content: 'Content'
   footer: 'Footer'
   footer_first: 'First Bottom'
   footer_second: 'Second Bottom'
