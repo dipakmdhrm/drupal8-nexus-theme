@@ -909,7 +909,9 @@ ul.inline {
 }
 
 ul.inline li {
-  margin: 0;
+  display: inline;
+  list-style: none;
+  margin: 0 2px;
   padding: 0;
 }
 
@@ -919,6 +921,10 @@ ul.inline li {
 .tabs-wrapper {
   border-bottom: 1px solid #b7b7b7;
   margin: 0 0 5px 0;
+}
+
+ul.primary li {
+  display: inline;
 }
 
 ul.primary {
@@ -939,7 +945,7 @@ ul.primary li a {
   margin-right: 5px;
 }
 
-ul.primary li a:hover, ul.primary li a.active {
+ul.primary li a:hover, ul.primary li a.is-active {
   background: #666;
   border: none;
   color: #fff;
@@ -959,6 +965,7 @@ ul.secondary {
 }
 
 ul.secondary li {
+  display: inline;
   border-right: none;
 }
 
@@ -971,7 +978,7 @@ ul.secondary li a, ul.secondary li a:link {
   padding: 0 1em;
 }
 
-ul.secondary li a:hover, ul.secondary li a.active {
+ul.secondary li a:hover, ul.secondary li a.is-active {
   background: #888;
   color: #fff;
   text-decoration: none;
@@ -1056,7 +1063,7 @@ ul.inline, ul.links.inline {
 
 .comment .content { font-size: 0.929em; line-height: 1.6; }
 
-.comment .comment-arrow { background: url(images/comment-arrow.gif) no-repeat 0 center transparent;
+.comment .comment-arrow { background: url(../images/comment-arrow.gif) no-repeat 0 center transparent;
 border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36px; margin-top: 15px; position: absolute; width: 22px; }
 
 .comment .comment-text { padding: 0 25px 10px 35px; display: table-cell; vertical-align: top; position: relative; width: 100%; border-left: 1px solid #d3d7d9; }
@@ -1067,6 +1074,9 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 
 .comment .comment-text .comment-arrow { border-left: 1px solid #ffffff; border-right: 1px solid #ffffff; }
 
+.comments .indented { margin-left: 40px; }
+
+.comments img { max-width: none; }
 
 /*-------------------------------------------*
 /* Forum
@@ -1131,6 +1141,12 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
   font-size: 16px;
 }
 
+/*-------------------------------------------*
+/* Breadcrumbs
+/*-------------------------------------------*/
+.breadcrumb>li+li:before {
+    content: "»";
+}
 
 @media screen and (max-width: 768px) {
   html{
