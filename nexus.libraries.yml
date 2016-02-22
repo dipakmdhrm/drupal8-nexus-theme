@@ -1,9 +1,9 @@
 global-css:
   css:
     theme:
-      assets/css/style.css: {}
       assets/css/bootstrap.min.css: {}
       assets/css/flexslider.css: {}
+      assets/css/style.css: {}
 
 global-js:
   js:
