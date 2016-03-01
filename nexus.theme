@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Nexus theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for Page templates.
+ *
+ * Override or insert variables into the page template.
+ */
+function nexus_preprocess_page(&$variables) {
+  // Get Site name.
+  $site_config = \Drupal::config('system.site');
+  if (!empty($variables['page']['#title'])) {
+    $variables['site_name'] = $site_config->get('name');
+  }
+
+  $themes = \Drupal::service('theme_handler')->listInfo();
+  $theme_object = $themes['nexus'];
+
+  $variables['logo_path'] = file_url_transform_relative(file_create_url($theme_object->getPath() . '/logo.png'));
+
+  $variables['slideshow_display'] = theme_get_setting('slideshow_display','nexus');
+
+  $variables['slide1_head'] = theme_get_setting('slide1_head','nexus');
+  $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc','nexus'), 'full_html');
+  $variables['slide1_url'] = theme_get_setting('slide1_url','nexus');
+
+  $variables['slide2_head'] = theme_get_setting('slide2_head','nexus');
+  $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc','nexus'), 'full_html');
+  $variables['slide2_url'] = theme_get_setting('slide2_url','nexus');
+
+  $variables['slide3_head'] = theme_get_setting('slide3_head','nexus');
+  $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc','nexus'), 'full_html');
+  $variables['slide3_url'] = theme_get_setting('slide3_url','nexus');
+
+  $variables['this_year']= date('Y');
+
+  $variables['preface_col'] = ( 12 / ( (bool) $variables['page']['preface_first'] + (bool) $variables['page']['preface_middle'] + (bool) $variables['page']['preface_last'] ) );
+  $variables['footer_col'] = ( 12 / ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
+
+
+}
+
+/**
+ * Prepares variables for comment templates.
+ *
+ * Default template: comment.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the comment and entity objects.
+ *     Array keys: #comment, #commented_entity.
+ */
+function nexus_preprocess_breadcrumb(&$variables) {
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = array(
+      'text' => $node->getTitle(),
+      'url' => $node->URL()
+   );
+  }
+}
