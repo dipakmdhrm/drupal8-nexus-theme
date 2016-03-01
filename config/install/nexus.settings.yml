@@ -4,8 +4,8 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: false
-  path: 'themes/nexus/logo.png'
+  use_default: true
+  path: ''
 favicon:
   use_default: true
   path: ''

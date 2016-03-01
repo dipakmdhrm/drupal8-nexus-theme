@@ -11,17 +11,6 @@
  * Override or insert variables into the page template.
  */
 function nexus_preprocess_page(&$variables) {
-  // Get Site name.
-  $site_config = \Drupal::config('system.site');
-  if (!empty($variables['page']['#title'])) {
-    $variables['site_name'] = $site_config->get('name');
-  }
-
-  $themes = \Drupal::service('theme_handler')->listInfo();
-  $theme_object = $themes['nexus'];
-
-  $variables['logo_path'] = file_url_transform_relative(file_create_url($theme_object->getPath() . '/logo.png'));
-
   $variables['slideshow_display'] = theme_get_setting('slideshow_display','nexus');
 
   $variables['slide1_head'] = theme_get_setting('slide1_head','nexus');
