@@ -18,3 +18,8 @@ regions:
   footer_second: 'Second Bottom'
   footer_third: 'Third Bottom'
   footer_fourth: 'Fourth Bottom'
+
+# Assets
+libraries:
+  - nexus/global-css
+  - nexus/global-js
