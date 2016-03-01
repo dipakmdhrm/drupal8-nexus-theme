@@ -5,6 +5,8 @@ core: 8.x
 
 # Regions
 regions:
+  site_branding: 'Site Branding'
+  main_navigation: 'Main Navigation'
   preface_first: 'Preface First'
   preface_middle: 'Preface Middle'
   preface_last: 'Preface Last'
