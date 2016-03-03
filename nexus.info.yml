@@ -5,12 +5,12 @@ core: 8.x
 
 # Regions
 regions:
-  site_branding: 'Site Branding'
+  header: 'Header'
   main_navigation: 'Main Navigation'
   preface_first: 'Preface First'
-  preface_middle: 'Preface Middle'
-  preface_last: 'Preface Last'
-  header: 'Header'
+  preface_second: 'Preface Second'
+  preface_third: 'Preface Third'
+  highlighted: 'Highlighted'
   sidebar_first: 'First Sidebar'
   content_top: 'Content Top'
   help: 'Help'
