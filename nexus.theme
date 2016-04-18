@@ -27,8 +27,13 @@ function nexus_preprocess_page(&$variables) {
 
   $variables['this_year']= date('Y');
 
-  $variables['preface_col'] = ( 12 / ( (bool) $variables['page']['preface_first'] + (bool) $variables['page']['preface_second'] + (bool) $variables['page']['preface_third'] ) );
-  $variables['footer_col'] = ( 12 / ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
+  $variables['preface_col'] = ( ( (bool) $variables['page']['preface_first'] + (bool) $variables['page']['preface_second'] + (bool) $variables['page']['preface_third'] ) );
+  $variables['preface_col'] = ($variables['preface_col'] > 0)
+    ? (12 / $variables['preface_col']) : 0;
+
+  $variables['footer_col'] = ( ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
+  $variables['footer_col'] = ($variables['footer_col'] > 0)
+    ? (12 / $variables['footer_col']) : 0;
 
 
 }
