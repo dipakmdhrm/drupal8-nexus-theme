@@ -5,7 +5,7 @@ dependencies:
     - nexus
 id: nexus_page_title
 theme: nexus
-region: content_tops
+region: content_top
 weight: -50
 provider: null
 plugin: page_title_block
