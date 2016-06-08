@@ -1,14 +1,14 @@
 jQuery(window).load(function() {
-    
+
   /* Navigation */
 
-	jQuery('#main-menu > ul').superfish({ 
-		delay:       500,								// 0.1 second delay on mouseout 
-		animation:   { opacity:'show',height:'show'},	// fade-in and slide-down animation 
-		dropShadows: true								// disable drop shadows 
-	});	  
+	jQuery('#main-menu > nav > ul').superfish({
+		delay:       500,								// 0.1 second delay on mouseout
+		animation:   { opacity:'show',height:'show'},	// fade-in and slide-down animation
+		dropShadows: true								// disable drop shadows
+	});
 
-	jQuery('#main-menu > ul').mobileMenu({
+	jQuery('#main-menu > nav > ul').mobileMenu({
 		prependTo:'.mobilenavi'
 	});
 
