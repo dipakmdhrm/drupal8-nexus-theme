@@ -75,8 +75,10 @@
         <ul class="slides">
           <li>
             <img src="{{ base_path ~ 'themes/nexus/assets/images/slide-image-1.jpg' }}"/>
-            {{ slide1_head|striptags }}
             {% if slide1_head or slide1_desc %}
+              {% if slide1_head %}
+                {{ slide1_head|striptags }}
+              {% endif %}
               <div class="flex-caption">
                 <h2>{{ slide1_head|striptags }}</h2>{{ slide1_desc|striptags }}
                 <a class="frmore" href="{{ slide1_url|striptags }}">{{ 'Read More'|t }}</a>
@@ -86,6 +88,9 @@
           <li>
             <img src="{{ base_path ~ 'themes/nexus/assets/images/slide-image-2.jpg' }}"/>
             {% if slide2_head or slide2_desc %}
+              {% if slide2_head %}
+                {{ slide2_head|striptags }}
+              {% endif %}
               <div class="flex-caption">
                 <h2>{{ slide2_head|striptags }}</h2>{{ slide2_desc|striptags }}
                 <a class="frmore" href="{{ slide2_url|striptags }}">{{ 'Read More'|t }}</a>
@@ -95,6 +100,9 @@
           <li>
             <img src="{{ base_path ~ 'themes/nexus/assets/images/slide-image-3.jpg' }}"/>
             {% if slide3_head or slide3_desc %}
+              {% if slide3_head %}
+                {{ slide3_head|striptags }}
+              {% endif %}
               <div class="flex-caption">
                 <h2>{{ slide3_head|striptags }}</h2>{{ slide3_desc|striptags }}
                 <a class="frmore" href="{{ slide3_url|striptags }}">{{ 'Read More'|t }}</a>
