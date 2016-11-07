@@ -1,21 +1,22 @@
-jQuery(window).load(function() {
+(function ($) {
+  $(window).load(function() {
 
-  /* Navigation */
+    /* Navigation */
 
-  jQuery('#main-menu > nav > ul').superfish({
-    delay:       500,                // 0.1 second delay on mouseout
-    animation:   { opacity:'show',height:'show'},  // fade-in and slide-down animation
-    dropShadows: true                // disable drop shadows
+    $('#main-menu > nav > ul').superfish({
+      delay:       500,                // 0.1 second delay on mouseout
+      animation:   { opacity:'show',height:'show'},  // fade-in and slide-down animation
+      dropShadows: true                // disable drop shadows
+    });
+
+    $('#main-menu > nav > ul').mobileMenu({
+      prependTo:'.mobilenavi',
+      groupPageText: Drupal.t('Main'),
+      topOptionText: Drupal.t('Select a page')
+    });
+
   });
-
-  jQuery('#main-menu > nav > ul').mobileMenu({
-    prependTo:'.mobilenavi',
-    groupPageText: Drupal.t('Main'),
-    topOptionText: Drupal.t('Select a page')
-  });
-
-});
-
+})(jQuery);
 
 ( function() {
   var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
