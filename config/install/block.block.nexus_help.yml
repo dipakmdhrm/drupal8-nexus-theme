@@ -7,7 +7,7 @@ dependencies:
     - nexus
 id: nexus_help
 theme: nexus
-region: nelp
+region: help
 weight: 10
 provider: null
 plugin: help_block
