@@ -18,10 +18,21 @@ Drupal compatibility:
 =====================
 This theme is compatible with Drupal 8.x.x
 
-Developed by
-============
-www.devsaran.com
+Designed & Developed for Drupal 7 by:
+=====================================
+https://www.drupal.org/u/devsaran
+https://www.devsaran.com
 
+Ported to Drupal 8 by:
+======================
+https://www.drupal.org/u/dipakmdhrm
+http://www.dipakyadav.com
+
+Maintainers:
+https://www.drupal.org/u/dipakmdhrm
+https://www.drupal.org/u/karmen
+https://www.drupal.org/u/nesta_
+https://www.drupal.org/u/devsaran
 
 Help and Support Us
 =====================
