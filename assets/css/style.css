@@ -1148,6 +1148,22 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
     content: "»";
 }
 
+@media (max-width: 992px) {
+  .flex-caption {
+    top: 50%;
+    margin-top: -84px;
+    padding: 0 150px;
+  }
+  .flex-direction-nav .flex-prev,
+  .flex-direction-nav .flex-next {
+    z-index: 1000;
+  }
+  .flex-direction-nav .flex-prev:hover,
+  .flex-direction-nav .flex-next:hover {
+    z-index: 1012;
+  }
+}
+
 @media screen and (max-width: 768px) {
   html{
     font-size: 60%;
@@ -1170,8 +1186,68 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
     display:none;
   }
 
-  .flex-caption{
+  /*.flex-caption{
     display: none;
-  }
+  }*/
 
+}
+
+@media (max-width: 640px) {
+  .flex-direction-nav a {
+    width: 40px;
+    height: 50px;
+    /*margin: -50px 0 0;*/
+    display: block;
+    background-image: url(../images/bg_direction_nav.png);
+    position: absolute;
+    top: 50%;
+    z-index: 110;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: top -24px left -6px;
+    margin-top: -30px;
+  }
+  .flex-direction-nav .flex-next {
+    background-position: top -24px left -53px;
+  }
+  .flexslider:hover .flex-next:hover,
+  .flexslider:hover .flex-prev:hover {background-position-y: -124px;}
+  .flex-caption {
+    margin-top: -66px;
+    padding: 0 210px;
+    line-height: normal;
+  }
+  .flex-caption h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-direction-nav a {
+    width: 28px;
+    background-size: 70px;
+    background-position: top -10px left -4px;
+  }
+  .flex-direction-nav .flex-next {
+    background-position: top -10px left -38px;
+  }
+  .flexslider:hover .flex-next:hover,
+  .flexslider:hover .flex-prev:hover {background-position-y: -80px;}
+  .flex-caption {
+    padding: 0px 242px;
+    font-size: 13px;
+  }
+  .flex-caption h2 {
+    font-size: 19px;
+  }
+  .flex-caption a.frmore {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .flex-caption {
+    padding: 0px 272px;
+  }
 }
