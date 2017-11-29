@@ -995,28 +995,31 @@ ul.inline, ul.links.inline {
 /*-------------------------------------------*
 /* Tabs and Tags
 /*-------------------------------------------*/
-.field-name-field-tags {
-  margin: 0 0 10px 0;
-}
 
-.field-name-field-tags a{
+.field--name-field-tags {
+  display: flex;
+}
+.field--name-field-tags label.field__label {
+  font-weight: bold;
+}
+.field--name-field-tags label.field__label:after {
+  content: ':';
+}
+.field--name-field-tags ul{
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+.field--name-field-tags ul li{
+  margin: 0 0 0 0.3em;
+}
+.field--name-field-tags ul li a {
   background: #ed564b;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  text-shadow: none;
   border-radius: 2px;
   color: #fff;
   padding: 2px 6px;
 }
-
-.field-name-field-tags a:hover{
-  background: #111;
-  color: #fff;
-}
-
-.field-name-field-tags div {
-  display: inline;
-}
-
 
 /*-------------------------------------------*
 /* Profile
