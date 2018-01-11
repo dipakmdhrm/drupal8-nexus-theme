@@ -63,8 +63,18 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes }}>
-
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -72,7 +82,6 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-
   {% if display_submitted %}
     <footer>
       <div{{ author_attributes.addClass('meta') }}>
@@ -81,9 +90,7 @@
       </div>
     </footer>
   {% endif %}
-
   <div{{ content_attributes }}>
     {{ content }}
   </div>
-
 </article>

@@ -36,12 +36,12 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-    {% if not label_hidden %}
-        <label {{ title_attributes.addClass(title_classes) }}>{{ label }}</label>
-    {% endif %}
-    <ul class="links field__items">
-        {% for item in items %}
-            <li{{ item.attributes }}>{{ item.content }}</li>
-        {% endfor %}
-    </ul>
+  {% if not label_hidden %}
+      <label {{ title_attributes.addClass(title_classes) }}>{{ label }}</label>
+  {% endif %}
+  <ul class="links field__items">
+    {% for item in items %}
+        <li{{ item.attributes }}>{{ item.content }}</li>
+    {% endfor %}
+  </ul>
 </div>
