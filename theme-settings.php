@@ -9,7 +9,7 @@
  *   A keyed array containing the current state of the form.
  */
 
-function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
+function nexus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
   $form['nexus_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Nexus Settings'),
@@ -58,6 +58,13 @@ function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide1_url','nexus'),
   );
+  $form['nexus_settings']['slideshow']['slide1']['slide1_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Image 1'),
+    '#default_value' => theme_get_setting('slide1_image','nexus'),
+    '#upload_location' => 'public://',
+  );
+
   $form['nexus_settings']['slideshow']['slide2'] = array(
     '#type' => 'fieldset',
     '#title' => t('Slide 2'),
@@ -78,6 +85,12 @@ function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'textfield',
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide2_url','nexus'),
+  );
+  $form['nexus_settings']['slideshow']['slide2']['slide2_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Image 2'),
+    '#default_value' => theme_get_setting('slide2_image','nexus'),
+    '#upload_location' => 'public://',
   );
   $form['nexus_settings']['slideshow']['slide3'] = array(
     '#type' => 'fieldset',
@@ -100,7 +113,34 @@ function nexus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Slide URL'),
     '#default_value' => theme_get_setting('slide3_url','nexus'),
   );
-  $form['nexus_settings']['slideshow']['slideimage'] = array(
-    '#markup' => t('To change the Slide Images, Replace the slide-image-1.jpg, slide-image-2.jpg and slide-image-3.jpg in the images folder of the theme folder.'),
+  $form['nexus_settings']['slideshow']['slide3']['slide3_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Image 3'),
+    '#default_value' => theme_get_setting('slide3_image','nexus'),
+    '#upload_location' => 'public://',
   );
+  $form['nexus_settings']['slideshow']['slideimage'] = array(
+    '#markup' => t('To change the default Slide Images, Replace the slide-image-1.jpg, slide-image-2.jpg and slide-image-3.jpg in the images folder of the theme folder.'),
+  );
+  $filename = drupal_get_path('theme', 'nexus') . '/nexus.theme';
+  $form_state->addBuildInfo('files', array($filename));
+  // Custom submit to save the file permenant.
+  $form['#submit'][] = 'nexus_settings_form_submit';
+}
+
+function nexus_settings_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $account = \Drupal::currentUser();
+  $values = $form_state->getValues();
+  for ($i = 1; $i <= 3; $i++) {
+    if (isset($values["slide{$i}_image"]) && !empty($values["slide{$i}_image"])) {
+      // Load the file via file.fid.
+      if ($file = \Drupal\file\Entity\File::load($values["slide{$i}_image"][0])) {
+        // Change status to permanent.
+        $file->setPermanent();
+        $file->save();
+        $file_usage = \Drupal::service('file.usage');
+        $file_usage->add($file, 'user', 'user', $account->id());
+      }
+    }
+  }
 }

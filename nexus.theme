@@ -16,14 +16,48 @@ function nexus_preprocess_page(&$variables) {
   $variables['slide1_head'] = theme_get_setting('slide1_head','nexus');
   $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc','nexus'), 'full_html');
   $variables['slide1_url'] = theme_get_setting('slide1_url','nexus');
+  // slide1_image
+  $fid = theme_get_setting("slide1_image", "nexus");
+  if (!empty($fid)) {
+    $file = \Drupal\file\Entity\File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = file_create_url($uri);
+   }
+   else {
+    $image_path = drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-1.jpg';
+   }
+   $variables['slide1_image'] = $image_path;
+
 
   $variables['slide2_head'] = theme_get_setting('slide2_head','nexus');
   $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc','nexus'), 'full_html');
   $variables['slide2_url'] = theme_get_setting('slide2_url','nexus');
+  // slide2_image
+  $fid = theme_get_setting("slide2_image", "nexus");
+  if (!empty($fid)) {
+    $file = \Drupal\file\Entity\File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = file_create_url($uri);
+   }
+   else {
+    $image_path = drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-2.jpg';
+   }
+   $variables['slide2_image'] = $image_path;
 
   $variables['slide3_head'] = theme_get_setting('slide3_head','nexus');
   $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc','nexus'), 'full_html');
   $variables['slide3_url'] = theme_get_setting('slide3_url','nexus');
+  // slide3_image
+  $fid = theme_get_setting("slide3_image", "nexus");
+  if (!empty($fid)) {
+    $file = \Drupal\file\Entity\File::load($fid[0]);
+    $uri = $file->getFileUri();
+    $image_path = file_create_url($uri);
+   }
+   else {
+    $image_path =  drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-3.jpg';
+   }
+   $variables['slide3_image'] = $image_path;
 
   $variables['this_year']= date('Y');
 
