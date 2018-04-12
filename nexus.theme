@@ -83,6 +83,10 @@ function nexus_preprocess_page(&$variables) {
  *     Array keys: #comment, #commented_entity.
  */
 function nexus_preprocess_breadcrumb(&$variables) {
+  // Set cache context as 'URL'.
+  $variables['#cache']['contexts'][] = 'url';
+
+  // Set breadcrumb.
   if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
     $variables['breadcrumb'][] = array(
       'text' => $node->getTitle(),
