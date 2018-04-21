@@ -122,10 +122,14 @@ function nexus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormSt
   $form['nexus_settings']['slideshow']['slideimage'] = array(
     '#markup' => t('To change the default Slide Images, Replace the slide-image-1.jpg, slide-image-2.jpg and slide-image-3.jpg in the images folder of the theme folder.'),
   );
-  $filename = drupal_get_path('theme', 'nexus') . '/nexus.theme';
-  $form_state->addBuildInfo('files', array($filename));
-  // Custom submit to save the file permenant.
   $form['#submit'][] = 'nexus_settings_form_submit';
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $theme_file = drupal_get_path('theme', $theme) . '/theme-settings.php';
+  $build_info = $form_state->getBuildInfo();
+  if (!in_array($theme_file, $build_info['files'])) {
+    $build_info['files'][] = $theme_file;
+  }
+  $form_state->setBuildInfo($build_info);
 }
 
 function nexus_settings_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
