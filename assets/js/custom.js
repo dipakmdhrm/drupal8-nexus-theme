@@ -9,12 +9,7 @@
       dropShadows: true                // disable drop shadows
     });
 
-    $('#main-menu > nav > ul').mobileMenu({
-      prependTo:'.mobilenavi',
-      groupPageText: Drupal.t('Main'),
-      topOptionText: Drupal.t('Select a page')
-    });
-
+    $('#navigation ul.sf-js-enabled').slicknav();
   });
 })(jQuery);
 

@@ -1260,3 +1260,16 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
     margin: 0 20px 20px 0;
   }
 }
+.slicknav_menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* #menu is the original menu */
+  .js #menu {
+    display: none;
+  }
+  .js .slicknav_menu {
+    display: block;
+  }
+}
