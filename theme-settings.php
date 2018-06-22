@@ -22,6 +22,12 @@ function nexus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormSt
     '#default_value' => theme_get_setting('show_breadcrumbs','nexus'),
     '#description'   => t("Check this option to show breadcrumbs in page. Uncheck to hide."),
   );
+  $form['nexus_settings']['sticky_header'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Make header sticky at the top'),
+    '#default_value' => theme_get_setting('sticky_header','nexus'),
+    '#description'   => t("Check this option to make the header sticky at the top."),
+  );
   $form['nexus_settings']['slideshow'] = array(
     '#type' => 'fieldset',
     '#title' => t('Front Page Slideshow'),

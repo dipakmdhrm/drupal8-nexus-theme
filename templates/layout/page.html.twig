@@ -68,175 +68,177 @@
       </div>
     </div>
   </header>
-  {% if is_front %}
-    {{ attach_library('nexus/slider-js') }}
-    {% if slideshow_display %}
-      <div id="slidebox" class="flexslider">
-        <ul class="slides">
-          <li>
-            <img src="{{ slide1_image }}"/>
-            {% if slide1_head or slide1_desc %}
-              {% if slide1_head %}
-                {{ slide1_head|striptags }}
-              {% endif %}
-              <div class="flex-caption">
-                <h2>{{ slide1_head|striptags }}</h2>{{ slide1_desc|striptags }}
-                <a class="frmore" href="{{ slide1_url|striptags }}">{{ 'Read More'|t }}</a>
-              </div>
-            {% endif %}
-          </li>
-          <li>
-            <img src="{{ slide2_image }}"/>
-            {% if slide2_head or slide2_desc %}
-              {% if slide2_head %}
-                {{ slide2_head|striptags }}
-              {% endif %}
-              <div class="flex-caption">
-                <h2>{{ slide2_head|striptags }}</h2>{{ slide2_desc|striptags }}
-                <a class="frmore" href="{{ slide2_url|striptags }}">{{ 'Read More'|t }}</a>
-              </div>
-            {% endif %}
-          </li>
-          <li>
-            <img src="{{ slide3_image  }}"/>
-            {% if slide3_head or slide3_desc %}
-              {% if slide3_head %}
-                {{ slide3_head|striptags }}
-              {% endif %}
-              <div class="flex-caption">
-                <h2>{{ slide3_head|striptags }}</h2>{{ slide3_desc|striptags }}
-                <a class="frmore" href="{{ slide3_url|striptags }}">{{ 'Read More'|t }}</a>
-              </div>
-            {% endif %}
-          </li>
-        </ul><!-- /slides -->
-        <div class="doverlay"></div>
-      </div>
-    {% endif %}
-  {% endif %}
-
-  {% if page.preface_first or page.preface_second or page.preface_third %}
-    <div id="preface-area">
-      <div class="container">
-        <div class="row">
-          {% if page.preface_first %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
-              {{ page.preface_first }}
-            </div>
-          {% endif %}
-          {% if page.preface_second %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
-              {{ page.preface_second }}
-            </div>
-          {% endif %}
-          {% if page.preface_third %}
-            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
-              {{ page.preface_third }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  {% if page.highlighted %}
-    <div id="highlighted-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            {{ page.highlighted }}
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  <div id="main-content">
-    <div class="container">
-      <div class="row">
-        {% if page.sidebar_first %}
-          {% set primary_col = 8 %}
-        {% else %}
-          {% set primary_col = 12 %}
-        {% endif %}
-        <div id="primary" class="{{ 'content-area col-sm-' ~ primary_col }}">
-          <section id="content" role="main" class="clearfix">
-            {% if show_breadcrumbs %}
-              {% if breadcrumb %}
-                <div id="breadcrumbs">
-                  {{ breadcrumb }}
+  <div class="content-wrapper">
+    {% if is_front %}
+      {{ attach_library('nexus/slider-js') }}
+      {% if slideshow_display %}
+        <div id="slidebox" class="flexslider">
+          <ul class="slides">
+            <li>
+              <img src="{{ slide1_image }}"/>
+              {% if slide1_head or slide1_desc %}
+                {% if slide1_head %}
+                  {{ slide1_head|striptags }}
+                {% endif %}
+                <div class="flex-caption">
+                  <h2>{{ slide1_head|striptags }}</h2>{{ slide1_desc|striptags }}
+                  <a class="frmore" href="{{ slide1_url|striptags }}">{{ 'Read More'|t }}</a>
                 </div>
               {% endif %}
-            {% endif %}
-            {{ messages }}
-            {% if page.content_top %}
-              <div id="content_top">
-                {{ page.content_top }}
+            </li>
+            <li>
+              <img src="{{ slide2_image }}"/>
+              {% if slide2_head or slide2_desc %}
+                {% if slide2_head %}
+                  {{ slide2_head|striptags }}
+                {% endif %}
+                <div class="flex-caption">
+                  <h2>{{ slide2_head|striptags }}</h2>{{ slide2_desc|striptags }}
+                  <a class="frmore" href="{{ slide2_url|striptags }}">{{ 'Read More'|t }}</a>
+                </div>
+              {% endif %}
+            </li>
+            <li>
+              <img src="{{ slide3_image  }}"/>
+              {% if slide3_head or slide3_desc %}
+                {% if slide3_head %}
+                  {{ slide3_head|striptags }}
+                {% endif %}
+                <div class="flex-caption">
+                  <h2>{{ slide3_head|striptags }}</h2>{{ slide3_desc|striptags }}
+                  <a class="frmore" href="{{ slide3_url|striptags }}">{{ 'Read More'|t }}</a>
+                </div>
+              {% endif %}
+            </li>
+          </ul><!-- /slides -->
+          <div class="doverlay"></div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if page.preface_first or page.preface_second or page.preface_third %}
+      <div id="preface-area">
+        <div class="container">
+          <div class="row">
+            {% if page.preface_first %}
+              <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+                {{ page.preface_first }}
               </div>
             {% endif %}
-            <div id="content-wrap">
-              {{ page.help }}
-              {{ page.content }}
-            </div>
-          </section>
-        </div>
-        {% if page.sidebar_first %}
-          <aside id="sidebar" class="col-sm-4" role="complementary">
-           {{ page.sidebar_first }}
-          </aside>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-
-  {% if page.footer %}
-    <div id="footer-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            {{ page.footer }}
+            {% if page.preface_second %}
+              <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+                {{ page.preface_second }}
+              </div>
+            {% endif %}
+            {% if page.preface_third %}
+              <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+                {{ page.preface_third }}
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
 
-  {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-    <div id="bottom">
+    {% if page.highlighted %}
+      <div id="highlighted-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              {{ page.highlighted }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div id="main-content">
       <div class="container">
         <div class="row">
-          {% if page.footer_first %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_first }}
-            </div>
+          {% if page.sidebar_first %}
+            {% set primary_col = 8 %}
+          {% else %}
+            {% set primary_col = 12 %}
           {% endif %}
-          {% if page.footer_second %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_second }}
-            </div>
-          {% endif %}
-          {% if page.footer_third %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_third }}
-            </div>
-          {% endif %}
-          {% if page.footer_fourth %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_fourth }}
-            </div>
+          <div id="primary" class="{{ 'content-area col-sm-' ~ primary_col }}">
+            <section id="content" role="main" class="clearfix">
+              {% if show_breadcrumbs %}
+                {% if breadcrumb %}
+                  <div id="breadcrumbs">
+                    {{ breadcrumb }}
+                  </div>
+                {% endif %}
+              {% endif %}
+              {{ messages }}
+              {% if page.content_top %}
+                <div id="content_top">
+                  {{ page.content_top }}
+                </div>
+              {% endif %}
+              <div id="content-wrap">
+                {{ page.help }}
+                {{ page.content }}
+              </div>
+            </section>
+          </div>
+          {% if page.sidebar_first %}
+            <aside id="sidebar" class="col-sm-4" role="complementary">
+             {{ page.sidebar_first }}
+            </aside>
           {% endif %}
         </div>
       </div>
     </div>
-  {% endif %}
 
-  <footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="fcred col-sm-12">
-          {{ "Copyright"|t }} &copy; {{ this_year }}, <a href="{{ front_page }}">{{ site_name }}</a>. {{ "Theme by"|t }} <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
+    {% if page.footer %}
+      <div id="footer-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              {{ page.footer }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    {% endif %}
+
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+      <div id="bottom">
+        <div class="container">
+          <div class="row">
+            {% if page.footer_first %}
+              <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+                {{ page.footer_first }}
+              </div>
+            {% endif %}
+            {% if page.footer_second %}
+              <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+                {{ page.footer_second }}
+              </div>
+            {% endif %}
+            {% if page.footer_third %}
+              <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+                {{ page.footer_third }}
+              </div>
+            {% endif %}
+            {% if page.footer_fourth %}
+              <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+                {{ page.footer_fourth }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="fcred col-sm-12">
+            {{ "Copyright"|t }} &copy; {{ this_year }}, <a href="{{ front_page }}">{{ site_name }}</a>. {{ "Theme by"|t }} <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </div>

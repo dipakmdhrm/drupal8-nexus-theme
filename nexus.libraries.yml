@@ -16,6 +16,7 @@ global-js:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/drupalSettings
 
 
 slider-js:
