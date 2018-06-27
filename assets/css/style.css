@@ -745,6 +745,9 @@ border-top-left-radius: 4px; border-top-right-radius: 4px; }
 -moz-border-radius-bottomright: 4px; -webkit-border-bottom-left-radius: 4px; -webkit-border-bottom-right-radius: 4px;
 border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 
+.contact-form #edit-subject-wrapper label{
+  display: block;}
+
 /* search form */
 
 .search-block-form .form-item {
@@ -1132,7 +1135,7 @@ ul.inline, ul.links.inline {
 
 .comment { margin-bottom: 20px; display: table; vertical-align: top; }
 
-.comment .attribution { display: table-cell; padding: 0 35px 0 0; vertical-align: top; overflow: hidden; }
+.comment .attribution { display: table-cell; padding: 0 20px 0 0; vertical-align: top; overflow: hidden; }
 
 .comment .attribution img { margin: 0; border: 1px solid #d3d7d9; }
 
@@ -1149,7 +1152,7 @@ ul.inline, ul.links.inline {
 .comment .comment-arrow { background: url(../images/comment-arrow.gif) no-repeat 0 center transparent;
 border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36px; margin-top: 15px; position: absolute; width: 22px; }
 
-.comment .comment-text { padding: 0 25px 10px 35px; display: table-cell; vertical-align: top; position: relative; width: 100%; border-left: 1px solid #d3d7d9; }
+.comment .comment-text { padding: 0 25px 10px 35px; display: table-cell; vertical-align: top; position: relative; border-left: 1px solid #d3d7d9; }
 
 .comment .indented { margin-left: 40px; }
 
@@ -1160,6 +1163,8 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 .comments .indented { margin-left: 40px; }
 
 .comments img { max-width: none; }
+
+.comments mark { display: table-row;}
 
 /*-------------------------------------------*
 /* Forum
