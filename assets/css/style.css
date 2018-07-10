@@ -673,11 +673,11 @@ padding: 0 0 10px; top: 12px; /* Offsets the negative margin of legends */
 
 .node-form .vertical-tabs .fieldset-wrapper { margin-top: 0; }
 
-.filter-wrapper { top: 0; padding: 1em 0 0.2em;
+.filter-wrapper { top: 0; padding: 1em 0.8em 0.2em;
 -khtml-border-radius-topright: 0; -khtml-border-radius-topleft: 0; -moz-border-radius-topright: 0; -moz-border-radius-topleft: 0;
 -webkit-border-top-left-radius: 0; -webkit-border-top-right-radius: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
 
-.filter-help a { font-size: 0.857em; padding: 2px 20px 0; }
+.filter-help a { font-size: 0.857em; padding: 2px 0 0 20px; }
 
 .filter-wrapper .form-item label { margin-right: 10px; }
 
