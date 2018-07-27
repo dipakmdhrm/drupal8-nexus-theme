@@ -1237,6 +1237,13 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
     content: "»";
 }
 
+/*-------------------------------------------*
+/* Code to fix the content overlap in comments
+/*-------------------------------------------*/
+.comment .comment-text img {
+  width: 100%;
+}
+
 @media (max-width: 992px) {
   .flex-caption {
     top: 50%;
