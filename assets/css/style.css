@@ -719,6 +719,8 @@ input.form-text, textarea.form-textarea, select.form-select { border: 1px solid 
 
 .form-actions { padding-top: 10px; }
 
+.ui-dialog-titlebar .ui-dialog-titlebar-close::after { content: "X"; display: block; font-size: 11px; font-weight: bold; width: 16px; }
+
 /* Contact Form */
 
 .contact-form #edit-name { width: 100%;
