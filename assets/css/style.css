@@ -824,7 +824,7 @@ div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane { padding: 1e
 
 /* Form Buttons */
 
-button,
+#page button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -848,7 +848,7 @@ border: 1px solid #dbdbdb;
 -moz-box-shadow: inset 0 1px 0 0 white; -webkit-box-shadow: inset 0 1px 0 0 white; -o-box-shadow: inset 0 1px 0 0 white; box-shadow: inset 0 1px 0 0 white;
 color: #333333; text-shadow: 0 1px 0 white; position: relative; font-weight:bold; padding: 4px .8em 5px .8em; font-size: 13px; }
 
-button:hover,
+#page button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
